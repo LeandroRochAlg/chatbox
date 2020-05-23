@@ -1,0 +1,147 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap);
+/* Themes */
+:root{
+/* Light Theme */ 
+    --box-background: #d0d1d0;
+    --name-color: #333835;
+    --message-color: #d0d1d0;
+    --message-background: #333835;
+
+/* Dark Theme 
+    --box-background: #333835;
+    --name-color: #d0d1d0;
+    --message-color: #333835;
+    --message-background: #d0d1d0;
+*/
+}
+
+/* General */
+html, body {
+    box-sizing: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: {font_size};
+}
+
+/* All */
+#log {
+    display: block;
+    position: absolute;
+    bottom: .5em;
+    left: 0;
+    padding: 0;
+  	width: 100%;
+}
+
+/* Chat Box */
+.slider {
+    position: relative;
+}
+
+#log>div .chat-box {
+    float: center;
+    clear: right;
+    background: var(--box-background);
+    width: 100%;
+    max-width: calc(100% - .5em);
+    margin: 0 .5em 0 .5em;
+    overflow: hidden;
+    border-radius: 5px;
+/* Animation */
+    animation: fadeInRight .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+    -webkit-animation: fadeInRight .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+/* Deleted messages */
+#log>div.deleted {
+  visibility: hidden;
+}
+
+/* Emoticons */
+#log .emote {
+	display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: -.2em;
+    padding: .4em .2em;
+    padding-top: 0;
+    position: relative;
+}
+
+#log .emote img {
+    display: block;
+    height: 1em;
+    opacity: 0;
+}
+
+/* Name and Message */
+#log .message,#log .meta {
+    vertical-align: top;
+    display: block;
+    padding: .3em .5em .3em;
+}
+
+/* Name */
+#log .meta {
+    position: relative;
+    top: .1em;
+    padding: .5em .7em .2em .7em;
+  	display: block;
+    white-space: nowrap;
+    text-overflow: none;
+    overflow: hidden;
+    background: rgba(0,0,0,0);
+    font-size: 1em;
+  	font-weight: 700;
+  	font-family: 'Roboto Mono', monospace;
+  	color: var(--name-color);
+  	text-transform: uppercase;
+}
+
+.name {
+    font-weight: 700;
+}
+
+/* Message */
+#log .message {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.3;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--message-background);
+    margin-bottom: 1.1em;
+    margin-left: .5em;
+    border-radius: 3px;
+    font-weight: 300;
+    margin-right: .5em;
+    color: var(--message-color);
+}
+
+#log .message img,
+#log .message .emote {
+    vertical-align: bottom;
+}
+
+/* Badge */
+.badge {
+    display: inline-block;
+    margin-right: 0.2em;
+    position: relative;
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+    top: -0.1em;
+    image-rendering: pixelated;
+    border-radius: 3px;
+    filter: grayscale(100%)
+}
+
