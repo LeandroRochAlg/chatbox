@@ -1,0 +1,20 @@
+<!-- item will be appened to this layout -->
+<div id="log" class="sl__chat__layout">
+</div>
+
+<!-- chat item -->
+<script type="text/template" id="chatlist_item">
+	<div class="slider">
+    <div data-from="{from}" data-id="{messageId}" class="chat-box start" data-background="{color}">
+      <span class="meta">
+        <span class="badges"></span><span class="name">{from}</span>
+      </span>
+
+      <span class="message">
+        {message}
+      </span>
+    </div>
+  </div>
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
